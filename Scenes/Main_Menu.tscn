@@ -1,0 +1,509 @@
+[gd_scene format=3 uid="uid://s7wgnbiqw150"]
+
+[ext_resource type="Script" uid="uid://4m81pbcfjof2" path="res://Scripts/main_menu.gd" id="1_rmbjf"]
+[ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="2_b7rmo"]
+[ext_resource type="Script" uid="uid://duldqr2y1spqi" path="res://Scripts/Tweens/play_button_tween.gd" id="3_00u4r"]
+[ext_resource type="Script" uid="uid://prj3x8nhx612" path="res://Scenes/ball.gd" id="3_b7rmo"]
+[ext_resource type="Script" uid="uid://ditmp76qye1i3" path="res://Scripts/Tweens/main_menu_settings_button_tween.gd" id="4_xvotp"]
+[ext_resource type="Script" uid="uid://iov3rnu61v7r" path="res://Scripts/Tweens/main_menu_quit_button_tween.gd" id="5_1edw4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wugcc"]
+font = ExtResource("2_b7rmo")
+font_size = 130
+
+[sub_resource type="Animation" id="Animation_rmbjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b7rmo"]
+resource_name = "Title_anim"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.12, 1.12), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00u4r"]
+_data = {
+&"RESET": SubResource("Animation_rmbjf"),
+&"Title_anim": SubResource("Animation_b7rmo")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmbjf"]
+font = ExtResource("2_b7rmo")
+font_size = 53
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00u4r"]
+size = Vector2(1174, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anlgx"]
+size = Vector2(1174, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvotp"]
+size = Vector2(32.5, 666.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1edw4"]
+size = Vector2(18, 18)
+
+[node name="MainMenu" type="Control" unique_id=1265516518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rmbjf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=168861196]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1124019174]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -265.85495
+offset_right = 203.0
+offset_bottom = -98.85495
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(203, 83)
+text = "PONG"
+label_settings = SubResource("LabelSettings_wugcc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title" unique_id=360739664]
+libraries/ = SubResource("AnimationLibrary_00u4r")
+
+[node name="p1HighScore" type="Label" parent="." unique_id=1207548931]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -168.49995
+offset_right = 404.0
+offset_bottom = -1.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.41, 0.41)
+pivot_offset = Vector2(404, 83.5)
+text = "Player 1 HighScore - 0"
+label_settings = SubResource("LabelSettings_rmbjf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore2" type="Label" parent="." unique_id=547025638]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -134.49995
+offset_right = 404.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.41, 0.41)
+pivot_offset = Vector2(404, 83.5)
+text = "Player 2 HighScore - 0"
+label_settings = SubResource("LabelSettings_rmbjf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1151209125]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -66.42499
+offset_right = 83.0
+offset_bottom = 224.57501
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play Button" type="Button" parent="VBoxContainer" unique_id=1892961712]
+custom_minimum_size = Vector2(212.28, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7rmo")
+theme_override_font_sizes/font_size = 34
+text = "Play"
+script = ExtResource("3_00u4r")
+
+[node name="Settings Button" type="Button" parent="VBoxContainer" unique_id=1743114276]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7rmo")
+theme_override_font_sizes/font_size = 34
+text = "Settings"
+script = ExtResource("4_xvotp")
+
+[node name="Quit Button" type="Button" parent="VBoxContainer" unique_id=1236443819]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7rmo")
+theme_override_font_sizes/font_size = 34
+text = "Quit
+"
+script = ExtResource("5_1edw4")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1755935331]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=267720644]
+position = Vector2(577, 0)
+shape = SubResource("RectangleShape2D_00u4r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1428363764]
+position = Vector2(577, 648)
+shape = SubResource("RectangleShape2D_anlgx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=2125575723]
+position = Vector2(-4, 323.75)
+shape = SubResource("RectangleShape2D_xvotp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" unique_id=167645792]
+position = Vector2(1157, 323.75)
+shape = SubResource("RectangleShape2D_xvotp")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1660729274]
+top_level = true
+z_index = 1
+position = Vector2(873, 91)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball" unique_id=1516848254]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1777717123]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball2" type="CharacterBody2D" parent="." unique_id=382797463]
+top_level = true
+z_index = 1
+position = Vector2(313, 69)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball2" unique_id=1528129002]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2" unique_id=645501520]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball3" type="CharacterBody2D" parent="." unique_id=1804415687]
+top_level = true
+z_index = 1
+position = Vector2(108, 206)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball3" unique_id=2109123724]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball3" unique_id=762673359]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball4" type="CharacterBody2D" parent="." unique_id=711074864]
+top_level = true
+z_index = 1
+position = Vector2(129, 483)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball4" unique_id=1710556964]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball4" unique_id=458721508]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball5" type="CharacterBody2D" parent="." unique_id=1698125097]
+top_level = true
+z_index = 1
+position = Vector2(335, 283)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball5" unique_id=1774179109]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball5" unique_id=743200347]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball6" type="CharacterBody2D" parent="." unique_id=441277942]
+top_level = true
+z_index = 1
+position = Vector2(762, 350)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball6" unique_id=767259515]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball6" unique_id=34372800]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball7" type="CharacterBody2D" parent="." unique_id=638423017]
+top_level = true
+z_index = 1
+position = Vector2(341, 535)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball7" unique_id=1523582405]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball7" unique_id=1953870819]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball8" type="CharacterBody2D" parent="." unique_id=329689839]
+top_level = true
+z_index = 1
+position = Vector2(318, 422)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball8" unique_id=1065379966]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball8" unique_id=1319555170]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball9" type="CharacterBody2D" parent="." unique_id=1631135028]
+top_level = true
+z_index = 1
+position = Vector2(815, 497)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball9" unique_id=925628235]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball9" unique_id=523506844]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball10" type="CharacterBody2D" parent="." unique_id=504358558]
+top_level = true
+z_index = 1
+position = Vector2(887, 204)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball10" unique_id=1120035824]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball10" unique_id=1501524950]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball11" type="CharacterBody2D" parent="." unique_id=1840964771]
+top_level = true
+z_index = 1
+position = Vector2(515, 542)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball11" unique_id=1654779292]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball11" unique_id=1793568486]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball12" type="CharacterBody2D" parent="." unique_id=89553444]
+top_level = true
+z_index = 1
+position = Vector2(251, 159)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball12" unique_id=683347529]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball12" unique_id=1135123931]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball13" type="CharacterBody2D" parent="." unique_id=1320383389]
+top_level = true
+z_index = 1
+position = Vector2(900, 350)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball13" unique_id=1833824178]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball13" unique_id=670232045]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball14" type="CharacterBody2D" parent="." unique_id=1411795421]
+top_level = true
+z_index = 1
+position = Vector2(1017, 488)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball14" unique_id=102904058]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball14" unique_id=1035098812]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball15" type="CharacterBody2D" parent="." unique_id=779693540]
+top_level = true
+z_index = 1
+position = Vector2(190, 326)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball15" unique_id=1364917449]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball15" unique_id=1652816801]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball16" type="CharacterBody2D" parent="." unique_id=1760265462]
+top_level = true
+z_index = 1
+position = Vector2(1035, 129)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball16" unique_id=1829297958]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball16" unique_id=2025227035]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball17" type="CharacterBody2D" parent="." unique_id=1763617275]
+top_level = true
+z_index = 1
+position = Vector2(1035, 247)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball17" unique_id=425816256]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball17" unique_id=434943827]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball18" type="CharacterBody2D" parent="." unique_id=342195446]
+top_level = true
+z_index = 1
+position = Vector2(1047, 350)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball18" unique_id=1233954892]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball18" unique_id=881157596]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball19" type="CharacterBody2D" parent="." unique_id=153210731]
+top_level = true
+z_index = 1
+position = Vector2(943, 544)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball19" unique_id=1353577500]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball19" unique_id=1342552996]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[node name="Ball20" type="CharacterBody2D" parent="." unique_id=1022993226]
+top_level = true
+z_index = 1
+position = Vector2(695, 540)
+script = ExtResource("3_b7rmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball20" unique_id=1088022089]
+position = Vector2(-12.525024, -12.480011)
+scale = Vector2(1.68, 1.66)
+polygon = PackedVector2Array(2.098236, 2.6988068, 12.8125305, 2.6988068, 12.8125305, 13.542175, 2.098236, 13.542175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball20" unique_id=1396639366]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1edw4")
+
+[connection signal="pressed" from="VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]

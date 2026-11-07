@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://n1tys8fjeh5m"]
+
+[ext_resource type="Script" uid="uid://da0j1j5t70fk" path="res://Scripts/audio_stream_player_2d.gd" id="1_koean"]
+[ext_resource type="AudioStream" uid="uid://mrn22vbdy8s" path="res://Audio/SeeingDouble_Loopable.wav" id="1_o8ivi"]
+[ext_resource type="Script" uid="uid://cg75cxmtys8gn" path="res://Scripts/global.gd" id="1_yl8w0"]
+[ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="4_pklo1"]
+
+[node name="Global" type="Node" unique_id=1196215847]
+script = ExtResource("1_yl8w0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1323016785]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1183682478]
+stream = ExtResource("1_o8ivi")
+volume_db = 15.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("1_koean")
+
+[node name="FPS" type="CanvasLayer" parent="." unique_id=1406350741]
+layer = 100
+
+[node name="FPS Label" type="Label" parent="FPS" unique_id=446943664]
+process_mode = 3
+z_index = 4
+texture_filter = 4
+offset_left = 7.0
+offset_top = 613.0
+offset_right = 109.0
+offset_bottom = 651.0
+theme_override_fonts/font = ExtResource("4_pklo1")
+theme_override_font_sizes/font_size = 20
+text = "FPS : "
+horizontal_alignment = 1
+vertical_alignment = 1
