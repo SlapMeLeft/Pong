@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://s7wgnbiqw150"]
 
 [ext_resource type="Script" uid="uid://4m81pbcfjof2" path="res://Scripts/main_menu.gd" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://bq7n6j44iaald" path="res://Assets/Icons/Red And Blue TabbleTennis bat.png" id="2_1edw4"]
 [ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="2_b7rmo"]
 [ext_resource type="Script" uid="uid://duldqr2y1spqi" path="res://Scripts/Tweens/play_button_tween.gd" id="3_00u4r"]
 [ext_resource type="Script" uid="uid://prj3x8nhx612" path="res://Scenes/ball.gd" id="3_b7rmo"]
@@ -75,6 +76,7 @@ grow_vertical = 2
 script = ExtResource("1_rmbjf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=168861196]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,7 +85,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=925694240]
+texture_filter = 1
+position = Vector2(576, 177.49)
+scale = Vector2(10, 10)
+texture = ExtResource("2_1edw4")
+
 [node name="Title" type="Label" parent="." unique_id=1124019174]
+z_index = 1
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 8
@@ -105,6 +114,7 @@ label_settings = SubResource("LabelSettings_wugcc")
 libraries/ = SubResource("AnimationLibrary_00u4r")
 
 [node name="p1HighScore" type="Label" parent="." unique_id=1207548931]
+z_index = 1
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
@@ -113,9 +123,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -404.0
-offset_top = -168.49995
+offset_top = -68.5
 offset_right = 404.0
-offset_bottom = -1.5
+offset_bottom = 98.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.41, 0.41)
@@ -126,6 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HighScore2" type="Label" parent="." unique_id=547025638]
+z_index = 1
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
@@ -134,9 +145,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -404.0
-offset_top = -134.49995
+offset_top = -34.5
 offset_right = 404.0
-offset_bottom = 32.5
+offset_bottom = 132.49997
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.41, 0.41)
@@ -147,16 +158,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1151209125]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -66.42499
-offset_right = 83.0
-offset_bottom = 224.57501
+offset_left = -106.0
+offset_top = 33.575012
+offset_right = 106.0
+offset_bottom = 324.575
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1

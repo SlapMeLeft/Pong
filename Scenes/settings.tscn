@@ -11,13 +11,9 @@
 [ext_resource type="Script" uid="uid://cfg3mc3gjd26q" path="res://Scripts/Tweens/settings_reset_save_button_tween.gd" id="9_vmqi3"]
 [ext_resource type="Script" uid="uid://5kv1n5up2nih" path="res://Scripts/Tweens/settings_confirm_button_tween.gd" id="10_g8dc3"]
 
-[node name="Settings" type="Control" unique_id=337094151]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Settings" type="CanvasLayer" unique_id=1140067159]
+process_mode = 3
+visible = false
 script = ExtResource("1_i44u3")
 
 [node name="SFX Audio test" type="AudioStreamPlayer2D" parent="." unique_id=651202992]
@@ -25,7 +21,6 @@ stream = ExtResource("2_lhmql")
 bus = &"SFX"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=815370026]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +29,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Settings" type="VBoxContainer" parent="." unique_id=1457971626]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -129,7 +123,6 @@ text = "Borderless"
 script = ExtResource("7_ieo4m")
 
 [node name="Menu Button" type="VBoxContainer" parent="." unique_id=679836683]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -148,7 +141,6 @@ text = "Back To Menu"
 script = ExtResource("8_1c72s")
 
 [node name="Save Reset" type="VBoxContainer" parent="." unique_id=281377663]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -176,7 +168,6 @@ text = "CONFIRM"
 script = ExtResource("10_g8dc3")
 
 [node name="Controls" type="VBoxContainer" parent="." unique_id=578805407]
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5

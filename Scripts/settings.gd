@@ -1,23 +1,22 @@
-extends Control
+extends CanvasLayer
 
 signal fps
 
 @onready var confirm: Button = $"Save Reset/Confirm"
 @onready var reset_save: Button = $"Save Reset/Reset Save"
 
-@onready var settings: Control = $"."
+@onready var settings: CanvasLayer = $"."
 
 @onready var music_volume: HSlider = $"Settings/Music Volume"
 @onready var sfx_volume: HSlider = $"Settings/Sfx Volume"
 @onready var sfx_audio_test: AudioStreamPlayer2D = $"SFX Audio test"
-
 
 var sfx_bus_index: int
 var music_bus_index: int
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
-
+	Settings.hide()
 
 func _ready() -> void:
 	sfx_bus_index = AudioServer.get_bus_index("SFX")
@@ -32,10 +31,7 @@ func _ready() -> void:
 
 
 func _process(float) -> void:
-	if get_tree().current_scene:
-		settings.show()
-	else:
-		settings.hide()
+	pass
 
 
 func _on_sfx_volume_changed(value: float) -> void:
@@ -68,12 +64,12 @@ func _on_fullscreen_pressed() -> void:
 
 func _on_windowed_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	get_window().borderless = true
+	get_window().borderless = false
 
 
 func _on_boderless_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	get_window().borderless = false
+	get_window().borderless = true
 
 
 func _on_fullscreen_borderless_pressed() -> void:

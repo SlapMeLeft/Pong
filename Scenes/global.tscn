@@ -17,6 +17,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1183682478]
+process_mode = 3
 stream = ExtResource("1_o8ivi")
 volume_db = 15.0
 autoplay = true

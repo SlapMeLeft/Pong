@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cumghg5xmulw1" path="res://Scripts/Tweens/quit_button_tween.gd" id="6_stj27"]
 
 [node name="Pause Menu" type="CanvasLayer" unique_id=974073145]
+process_mode = 3
 visible = false
 script = ExtResource("1_nwcfo")
 
@@ -126,16 +127,29 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="FPS Counter" type="Label" parent="Controls" unique_id=782148995]
+[node name="Label" type="Label" parent="Controls" unique_id=1743164832]
 texture_filter = 4
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 22
-text = "FPS Counter - B"
+text = "Player 1 - wasd"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="|" type="Control" parent="Controls" unique_id=1267610362]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Controls" unique_id=712080264]
+texture_filter = 4
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 22
+text = "player 2 - arrow keys"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="|3" type="Control" parent="Controls" unique_id=1479146602]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 
@@ -148,29 +162,16 @@ text = "Pause Menu - ESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="|3" type="Control" parent="Controls" unique_id=1479146602]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Controls" unique_id=1743164832]
-texture_filter = 4
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 22
-text = "Player 1 - wasd"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="|4" type="Control" parent="Controls" unique_id=647116971]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Controls" unique_id=712080264]
+[node name="FPS Counter" type="Label" parent="Controls" unique_id=782148995]
 texture_filter = 4
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_hdmo1")
 theme_override_font_sizes/font_size = 22
-text = "player 2 - arrow keys"
+text = "FPS Counter - B"
 horizontal_alignment = 1
 vertical_alignment = 1
 
