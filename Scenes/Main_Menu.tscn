@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq7n6j44iaald" path="res://Assets/Icons/Red And Blue TabbleTennis bat.png" id="2_1edw4"]
 [ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="2_b7rmo"]
 [ext_resource type="Script" uid="uid://duldqr2y1spqi" path="res://Scripts/Tweens/play_button_tween.gd" id="3_00u4r"]
-[ext_resource type="Script" uid="uid://prj3x8nhx612" path="res://Scenes/ball.gd" id="3_b7rmo"]
+[ext_resource type="Script" uid="uid://prj3x8nhx612" path="res://Scenes/main_menu_ball.gd" id="3_b7rmo"]
 [ext_resource type="Script" uid="uid://ditmp76qye1i3" path="res://Scripts/Tweens/main_menu_settings_button_tween.gd" id="4_xvotp"]
 [ext_resource type="Script" uid="uid://iov3rnu61v7r" path="res://Scripts/Tweens/main_menu_quit_button_tween.gd" id="5_1edw4"]
 
