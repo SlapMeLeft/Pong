@@ -5,8 +5,8 @@ extends Node
 
 func _ready() -> void:
 	Engine.max_fps = 0
-	_set_bus("SFX", 0.1)
-	_set_bus("Music", 0.1)
+	_set_bus("SFX", 0.2)
+	_set_bus("Music", 0.2)
 	_set_bus("Master", 0.1)
 
 
