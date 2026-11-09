@@ -17,6 +17,10 @@ func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	pause_menu.hide()
 	
+	
+func _on_settings_pressed() -> void:
+	pass
+
 
 func _on_main_menu_pressed() -> void:
 	unpaused()

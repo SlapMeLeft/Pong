@@ -4,6 +4,8 @@ extends Node
 
 
 func _ready() -> void:
+	Global.get_node("ColorRect").visible = false
+	
 	Engine.max_fps = 0
 	_set_bus("SFX", 0.2)
 	_set_bus("Music", 0.2)
