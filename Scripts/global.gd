@@ -8,6 +8,7 @@ func _ready() -> void:
 	_set_bus("SFX", 0.2)
 	_set_bus("Music", 0.2)
 	_set_bus("Master", 0.1)
+	
 
 
 func _set_bus(bus_name: String, linear_value: float) -> void:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cstxdo4yj1ert" path="res://Scripts/settings.gd" id="1_i44u3"]
 [ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="2_aaqfp"]
 [ext_resource type="AudioStream" uid="uid://cj2t5lsqkkian" path="res://Scenes/hitHurt.wav" id="2_lhmql"]
+[ext_resource type="Theme" uid="uid://fvk4qls1de0l" path="res://Themes/button_theme.tres" id="4_l7vst"]
 [ext_resource type="Script" uid="uid://cg373wrwyxwoy" path="res://Scripts/Tweens/settings_fullscreen_button_tween.gd" id="4_rgw85"]
 [ext_resource type="Script" uid="uid://cjbu755h261p3" path="res://Scripts/Tweens/settings_fullscreen_borderless_button_tween.gd" id="5_l7vst"]
 [ext_resource type="Script" uid="uid://cjvo0pyh4pe7n" path="res://Scripts/Tweens/settings_windowed_button_tween.gd" id="6_35cvv"]
@@ -96,6 +97,7 @@ layout_mode = 2
 
 [node name="fullscreen" type="Button" parent="Settings" unique_id=1173854342]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 22
 text = "Fullscreen"
@@ -106,6 +108,7 @@ layout_mode = 2
 
 [node name="fullscreen borderless" type="Button" parent="Settings" unique_id=1415187915]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 22
 text = "Fullscreen borderless"
@@ -116,6 +119,7 @@ layout_mode = 2
 
 [node name="windowed" type="Button" parent="Settings" unique_id=1339076135]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 22
 text = "Windowed"
@@ -126,6 +130,7 @@ layout_mode = 2
 
 [node name="borderless" type="Button" parent="Settings" unique_id=2107336114]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 22
 text = "Borderless"
@@ -145,6 +150,7 @@ grow_vertical = 0
 
 [node name="Button" type="Button" parent="Menu Button" unique_id=995600661]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
 text = "Back To Menu"
 script = ExtResource("8_1c72s")
@@ -161,6 +167,7 @@ grow_horizontal = 2
 
 [node name="Reset Save" type="Button" parent="Save Reset" unique_id=48199480]
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_colors/font_color = Color(0.92309856, 0, 0.14023998, 1)
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 29
@@ -170,6 +177,7 @@ script = ExtResource("9_vmqi3")
 [node name="Confirm" type="Button" parent="Save Reset" unique_id=1858736225]
 visible = false
 layout_mode = 2
+theme = ExtResource("4_l7vst")
 theme_override_colors/font_color = Color(0.92156863, 0, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 23

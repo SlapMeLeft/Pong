@@ -52,6 +52,8 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.bounce(collision.get_normal())
 		
 		if collider is CollisionObject2D:
+			audio_stream_player_2d.pitch_scale = randf_range(0.8, 1.4)
+			print(str(audio_stream_player_2d.pitch_scale))
 			audio_stream_player_2d.play()
 			
 		if collider is CharacterBody2D:
