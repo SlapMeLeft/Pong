@@ -480,11 +480,13 @@ alignment = 1
 custom_minimum_size = Vector2(212.28, 56)
 layout_mode = 2
 theme = ExtResource("5_vnflv")
-theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0.9607843)
 theme_override_fonts/font = ExtResource("2_b7rmo")
 theme_override_font_sizes/font_size = 34
 text = "Play"
 script = ExtResource("3_00u4r")
+
+[node name="Control2" type="Control" parent="VBoxContainer" unique_id=1745977692]
+layout_mode = 2
 
 [node name="Settings Button" type="Button" parent="VBoxContainer" unique_id=1743114276]
 custom_minimum_size = Vector2(0, 56)
@@ -494,6 +496,9 @@ theme_override_fonts/font = ExtResource("2_b7rmo")
 theme_override_font_sizes/font_size = 34
 text = "Settings"
 script = ExtResource("4_xvotp")
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=193191941]
+layout_mode = 2
 
 [node name="Quit Button" type="Button" parent="VBoxContainer" unique_id=1236443819]
 custom_minimum_size = Vector2(0, 56)

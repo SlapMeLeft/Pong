@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cstxdo4yj1ert" path="res://Scripts/settings.gd" id="1_i44u3"]
 [ext_resource type="FontFile" uid="uid://bl83ig2nqptj2" path="res://Fonts/Silkscreen-Regular.ttf" id="2_aaqfp"]
 [ext_resource type="AudioStream" uid="uid://cj2t5lsqkkian" path="res://Scenes/hitHurt.wav" id="2_lhmql"]
+[ext_resource type="Theme" uid="uid://dt6fx82evqcwa" path="res://Themes/vslider_theme.tres" id="4_35cvv"]
 [ext_resource type="Theme" uid="uid://fvk4qls1de0l" path="res://Themes/button_theme.tres" id="4_l7vst"]
 [ext_resource type="Script" uid="uid://cg373wrwyxwoy" path="res://Scripts/Tweens/settings_fullscreen_button_tween.gd" id="4_rgw85"]
 [ext_resource type="Script" uid="uid://cjbu755h261p3" path="res://Scripts/Tweens/settings_fullscreen_borderless_button_tween.gd" id="5_l7vst"]
@@ -41,6 +42,8 @@ offset_right = -131.75
 offset_bottom = 90.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Settings Title" type="Label" parent="Settings" unique_id=1245221022]
 texture_filter = 4
@@ -68,6 +71,9 @@ layout_mode = 2
 
 [node name="Music Volume" type="HSlider" parent="Settings" unique_id=1831125924]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("4_35cvv")
 max_value = 1.0
 step = 0.01
 
@@ -88,6 +94,9 @@ layout_mode = 2
 
 [node name="Sfx Volume" type="HSlider" parent="Settings" unique_id=1442192643]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_35cvv")
 max_value = 1.0
 step = 0.01
 
@@ -107,6 +116,7 @@ script = ExtResource("4_rgw85")
 layout_mode = 2
 
 [node name="fullscreen borderless" type="Button" parent="Settings" unique_id=1415187915]
+custom_minimum_size = Vector2(346.155, 0)
 layout_mode = 2
 theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
