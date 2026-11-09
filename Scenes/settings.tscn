@@ -101,6 +101,9 @@ theme_override_font_sizes/font_size = 22
 text = "Fullscreen"
 script = ExtResource("4_rgw85")
 
+[node name="Control2" type="Control" parent="Settings" unique_id=13416332]
+layout_mode = 2
+
 [node name="fullscreen borderless" type="Button" parent="Settings" unique_id=1415187915]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aaqfp")
@@ -108,12 +111,18 @@ theme_override_font_sizes/font_size = 22
 text = "Fullscreen borderless"
 script = ExtResource("5_l7vst")
 
+[node name="Control3" type="Control" parent="Settings" unique_id=870590549]
+layout_mode = 2
+
 [node name="windowed" type="Button" parent="Settings" unique_id=1339076135]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aaqfp")
 theme_override_font_sizes/font_size = 22
 text = "Windowed"
 script = ExtResource("6_35cvv")
+
+[node name="Control4" type="Control" parent="Settings" unique_id=1457128160]
+layout_mode = 2
 
 [node name="borderless" type="Button" parent="Settings" unique_id=2107336114]
 layout_mode = 2
