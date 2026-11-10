@@ -22,8 +22,9 @@ buses/default_bus_layout="uid://bke5sictcghq0"
 [autoload]
 
 Global="*uid://n1tys8fjeh5m"
-Settings="*uid://7ctoh26726s8"
 SaveManager="*uid://cbm1te2hxx64x"
+SettingsManager="*uid://7ctoh26726s8"
+PauseManager="*uid://c4oogm42ah64q"
 
 [display]
 

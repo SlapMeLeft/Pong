@@ -12,10 +12,10 @@
 [ext_resource type="Script" uid="uid://e3c1ixsc0gk1" path="res://Scripts/Tweens/settings_menu_button_tween.gd" id="8_1c72s"]
 [ext_resource type="Script" uid="uid://cfg3mc3gjd26q" path="res://Scripts/Tweens/settings_reset_save_button_tween.gd" id="9_vmqi3"]
 [ext_resource type="Script" uid="uid://5kv1n5up2nih" path="res://Scripts/Tweens/settings_confirm_button_tween.gd" id="10_g8dc3"]
+[ext_resource type="Script" uid="uid://dspau2a02m6ij" path="res://Scripts/Tweens/settings_main_menu_button_tween.gd" id="11_ieo4m"]
 
 [node name="Settings" type="CanvasLayer" unique_id=1140067159]
 process_mode = 3
-visible = false
 script = ExtResource("1_i44u3")
 
 [node name="SFX Audio test" type="AudioStreamPlayer2D" parent="." unique_id=651202992]
@@ -152,18 +152,33 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -70.0
+offset_top = -47.0
+offset_right = 70.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(70, 14)
 
 [node name="Button" type="Button" parent="Menu Button" unique_id=995600661]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme = ExtResource("4_l7vst")
 theme_override_fonts/font = ExtResource("2_aaqfp")
-text = "Back To Menu"
+theme_override_font_sizes/font_size = 22
+text = "Back To Game"
 script = ExtResource("8_1c72s")
+
+[node name="Button2" type="Button" parent="Menu Button" unique_id=806359308]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme = ExtResource("4_l7vst")
+theme_override_fonts/font = ExtResource("2_aaqfp")
+theme_override_font_sizes/font_size = 22
+text = "Back To Menu"
+script = ExtResource("11_ieo4m")
 
 [node name="Save Reset" type="VBoxContainer" parent="." unique_id=281377663]
 anchors_preset = 5
@@ -271,5 +286,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="Settings/windowed" to="." method="_on_windowed_pressed"]
 [connection signal="pressed" from="Settings/borderless" to="." method="_on_boderless_pressed"]
 [connection signal="pressed" from="Menu Button/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu Button/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Save Reset/Reset Save" to="." method="_on_reset_save_pressed"]
 [connection signal="pressed" from="Save Reset/Confirm" to="." method="_on_confirm_pressed"]

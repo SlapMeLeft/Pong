@@ -2,21 +2,18 @@ extends CanvasLayer
 
 signal fps
 
-@onready var confirm: Button = $"Save Reset/Confirm"
-@onready var reset_save: Button = $"Save Reset/Reset Save"
-
 @onready var settings: CanvasLayer = $"."
 
+@onready var confirm: Button = $"Save Reset/Confirm"
+@onready var reset_save: Button = $"Save Reset/Reset Save"
 @onready var music_volume: HSlider = $"Settings/Music Volume"
 @onready var sfx_volume: HSlider = $"Settings/Sfx Volume"
+
 @onready var sfx_audio_test: AudioStreamPlayer2D = $"SFX Audio test"
 
 var sfx_bus_index: int
 var music_bus_index: int
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
-	Settings.hide()
 
 func _ready() -> void:
 	sfx_bus_index = AudioServer.get_bus_index("SFX")
@@ -28,6 +25,9 @@ func _ready() -> void:
 	music_volume.value_changed.connect(_on_music_volume_changed)
 
 	hide()
+	
+	print("Settings node: ", get_path())
+	print("Pause Menu: ", get_node_or_null("../Pause Menu"))
 
 
 func _process(float) -> void:
@@ -76,4 +76,15 @@ func _on_fullscreen_borderless_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	get_window().borderless = true
 	
+	
+func _on_button_pressed() -> void:
+	hide()
+	SettingsManager.get_node("%Button").hide()
+	PauseManager.show()
+	get_tree().paused = true
+
+func _on_button_2_pressed() -> void:
+	hide()
+	PauseManager.hide()
+	SettingsManager.get_node("%Button2").hide()
 	

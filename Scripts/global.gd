@@ -3,6 +3,7 @@ extends Node
 @onready var fps_label: Label = $"FPS/FPS Label"
 
 
+
 func _ready() -> void:
 	Global.get_node("ColorRect").visible = false
 	
@@ -22,7 +23,6 @@ func _set_bus(bus_name: String, linear_value: float) -> void:
 
 
 func _process(delta: float) -> void:
-	
 	##If visible is true, it becomes false.
 	##If visible is false, it becomes true.
 	if Input.is_action_just_pressed("FPS"):

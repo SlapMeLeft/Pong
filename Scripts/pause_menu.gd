@@ -1,16 +1,13 @@
 extends CanvasLayer
 
-
 @onready var pause_menu: CanvasLayer = $"."
-@onready var animation_player: AnimationPlayer = $"../Ball Speed/AnimationPlayer"
 
 
 func _on_resume_pressed() -> void:
 	unpaused()
 	pause_menu.hide()
-	set_physics_process(true)
-	animation_player.play()
-	
+	get_tree().paused = false
+	SettingsManager.get_node("%Button").hide()
 
 func _on_restart_pressed() -> void:
 	unpaused()
@@ -19,8 +16,10 @@ func _on_restart_pressed() -> void:
 	
 	
 func _on_settings_pressed() -> void:
-	pass
-
+	pause_menu.hide()
+	SettingsManager.show()
+	SettingsManager.get_node("%Button").show()
+	
 
 func _on_main_menu_pressed() -> void:
 	unpaused()
@@ -34,5 +33,7 @@ func _on_quit_pressed() -> void:
 	
 
 func unpaused() -> void:
+	print("GAME WAS UNPAUSED BY:")
+	print_stack()
 	get_tree().paused = false
 	

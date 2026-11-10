@@ -2,17 +2,18 @@ extends CharacterBody2D
 
 @onready var p_1_score_anim: AnimationPlayer = $"../Player 1 Score/P1 score anim"
 @onready var p_2_score_anim: AnimationPlayer = $"../Player 2 Score/P2 score anim"
-
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var wobble_p_1: AnimationPlayer = $"../Player 1 Score/wobble p1"
 @onready var wobble_p_2: AnimationPlayer = $"../Player 2 Score/wobble p2"
 
-@onready var ball: CharacterBody2D = $"."
 @onready var player_1_score: Label = $"../Player 1 Score"
 @onready var player_2_score: Label = $"../Player 2 Score"
-@onready var pause_menu: CanvasLayer = $"../Pause Menu"
 @onready var ball_speed: Label = $"../Ball Speed"
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@onready var ball: CharacterBody2D = $"."
+
+@onready var pause_menu: CanvasLayer = $"../Pause Menu"
 
 @export var snap_back_speed: float = 8.0
 @export var bounce_variation: float = 50
@@ -34,7 +35,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if pause_menu.visible:
+	if PauseManager.visible:
 		set_physics_process(false)
 		wobble_p_1.pause()
 		wobble_p_2.pause()

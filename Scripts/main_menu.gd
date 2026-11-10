@@ -8,10 +8,9 @@ extends Control
 @onready var p2_high_score: Label = $HighScore2
 
 
-
-
-
 func _ready() -> void:
+	SettingsManager.hide()
+	PauseManager.hide()
 	animation_player.play("Title_anim")
 	
 	p1_high_score.text = "Player 1 HighScore - " + str(SaveManager.p1_high_score)
@@ -24,8 +23,9 @@ func _on_play_button_pressed() -> void:
 	
 
 func _on_settings_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/settings.tscn")
-	Settings.show()
+	SettingsManager.show()
+	SettingsManager.get_node("%Button2").show()
+
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
