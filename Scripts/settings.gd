@@ -32,6 +32,7 @@ func _ready() -> void:
 
 func _process(float) -> void:
 	pass
+	pass
 
 
 func _on_sfx_volume_changed(value: float) -> void:
