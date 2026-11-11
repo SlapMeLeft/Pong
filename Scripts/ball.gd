@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x += randf_range(-bounce_variation, bounce_variation)
 		velocity.y += randf_range(-bounce_variation, bounce_variation)
 		
-		var min_y = speed * 0.25
+		var min_y = speed * 0.275
 
 		if abs(velocity.y) < min_y:
 			velocity.y = min_y * sign(velocity.y) if velocity.y != 0 else min_y * (1 if randf() > 0.5 else -1)
@@ -85,7 +85,7 @@ func initialize():
 		speed = 150
 		ball_speed.set("theme_override_colors/font_color", (Color(0.214, 0.781, 0.346, 1.0)))
 		var extra_offset = 0.0 if randf() < 0.5 else PI
-		var angle = extra_offset + randf_range(-PI/3, PI/3)
+		var angle = extra_offset + randf_range(-PI/5, PI/5)
 		velocity = Vector2(cos(angle), sin(angle)).normalized()*speed
 		global_position = get_viewport_rect().size / 2.0
 
