@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 
 
 func initialize():
-		speed = 150
+		speed = 2000
 		ball_speed.set("theme_override_colors/font_color", (Color(0.214, 0.781, 0.346, 1.0)))
 		var extra_offset = 0.0 if randf() < 0.5 else PI
 		var angle = extra_offset + randf_range(-PI/5, PI/5)

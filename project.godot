@@ -13,6 +13,7 @@ config_version=5
 config/name="Pong (Version Control)"
 run/main_scene="uid://s7wgnbiqw150"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
 config/icon="uid://2wmaayuhttoa"
 
 [audio]
