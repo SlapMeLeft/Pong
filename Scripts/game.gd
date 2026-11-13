@@ -1,6 +1,8 @@
 extends Control
 
 @onready var animation_player: AnimationPlayer = $"Ball Speed/AnimationPlayer"
+@onready var player_2: CharacterBody2D = $"Player 2"
+@onready var player_1: CharacterBody2D = $"Player 1"
 
 
 func _ready() -> void:
@@ -19,3 +21,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().paused = true
 			PauseManager.show()
 			animation_player.pause()
+	
+	

@@ -11,10 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://c3vlkyhbdyvqh" path="res://Audio/hitHurt.wav" id="9_bf53h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ubv3"]
-size = Vector2(1172, 20)
+size = Vector2(1172, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
-size = Vector2(20.115, 700)
+size = Vector2(67.0575, 773)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbfu4"]
 size = Vector2(128.73564, 32.323242)
@@ -283,25 +283,25 @@ grow_vertical = 2
 [node name="Game Boundaries" type="StaticBody2D" parent="." unique_id=1706561870]
 
 [node name="Top Wall" type="CollisionShape2D" parent="Game Boundaries" unique_id=613040372]
-position = Vector2(576, -10)
+position = Vector2(576, -31)
 shape = SubResource("RectangleShape2D_6ubv3")
 
 [node name="Floor" type="CollisionShape2D" parent="Game Boundaries" unique_id=363675115]
-position = Vector2(576, 658)
+position = Vector2(576, 678.5)
 shape = SubResource("RectangleShape2D_6ubv3")
 
 [node name="Left Wall" type="Area2D" parent="." unique_id=151063377]
 position = Vector2(-22, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=370304046]
-position = Vector2(4, 325)
+position = Vector2(-19.471252, 324.5)
 shape = SubResource("RectangleShape2D_u44n3")
 
 [node name="Right Wall" type="Area2D" parent="." unique_id=445169563]
 position = Vector2(1173, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=748291971]
-position = Vector2(-3, 325)
+position = Vector2(20, 325)
 shape = SubResource("RectangleShape2D_u44n3")
 
 [node name="Player 1" type="CharacterBody2D" parent="." unique_id=456031203]

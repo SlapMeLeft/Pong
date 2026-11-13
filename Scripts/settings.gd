@@ -52,7 +52,7 @@ func _on_confirm_pressed() -> void:
 	confirm.hide()
 	reset_save.show()
 	SaveManager.reset_save()
-
+	
 
 func _on_sfx_test_pressed() -> void:
 	sfx_audio_test.play()

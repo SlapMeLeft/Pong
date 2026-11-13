@@ -3,8 +3,11 @@ extends Node
 const SAVE_PATH = "user://highscore.cfg"
 
 
+
 var p2_high_score: int = 0
 var p1_high_score: int = 0
+
+
 
 
 func _ready() -> void:
@@ -35,3 +38,5 @@ func reset_save():
 	p2_high_score = 0
 	if FileAccess.file_exists(SAVE_PATH):
 		DirAccess.remove_absolute(SAVE_PATH)
+		
+	_save_all()

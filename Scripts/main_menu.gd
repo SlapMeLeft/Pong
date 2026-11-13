@@ -13,6 +13,8 @@ func _ready() -> void:
 	PauseManager.hide()
 	animation_player.play("Title_anim")
 	
+	
+func _process(delta: float) -> void:
 	p1_high_score.text = "Player 1 HighScore - " + str(SaveManager.p1_high_score)
 	p2_high_score.text = "Player 2 HighScore - " + str(SaveManager.p2_high_score)
 	
