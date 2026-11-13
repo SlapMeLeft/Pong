@@ -19,7 +19,7 @@ extends CharacterBody2D
 @export var bounce_variation: float = 50
 
 var speed = 150
-const MAX_SPEED = 750.0
+const MAX_SPEED = 1000.0
 var p1_score = 0
 var p2_score = 0
 
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 			speed = min(speed + 50, MAX_SPEED)
 			if speed >= MAX_SPEED:
 				ball_speed.set("theme_override_colors/font_color", Color(1.0, 0.0, 0.0, 1.0))
-			elif speed >= 350:
+			elif speed >= 500:
 				ball_speed.set("theme_override_colors/font_color", Color(1.0, 0.5, 0.0, 1.0))
 			else:
 				ball_speed.set("theme_override_colors/font_color", Color(0.214, 0.781, 0.346, 1.0))
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 
 
 func initialize():
-		speed = 2000
+		speed = 150
 		ball_speed.set("theme_override_colors/font_color", (Color(0.214, 0.781, 0.346, 1.0)))
 		var extra_offset = 0.0 if randf() < 0.5 else PI
 		var angle = extra_offset + randf_range(-PI/5, PI/5)
